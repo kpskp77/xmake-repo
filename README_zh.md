@@ -12,6 +12,7 @@
 | ---- | ---- | ---- | ---- |
 | [`systemc`](https://systemc.org/) | 3.0.2、3.0.1、3.0.0、2.3.4、2.3.3、2.3.2 | Apache-2.0 | Accellera 官方的 SystemC 类库，做系统级设计、建模和验证用。静态库、动态库都能编；`SC_CPLUSPLUS` 已经替你加好了（3.x 是 C++17，2.3.x 是 C++11）。 |
 | [`svdpi`](https://github.com/kpskp77/svdpi) | 1.1.0, 1.0.0 | MIT | SystemVerilog DPI-C 头文件包，写 DPI import/export 的 C/C++ 侧代码时用，和各类仿真器、Verilator 配合都可以。 |
+| [`simlog`](https://github.com/kpskp77/simlog) | 1.0.0 | MIT | 基于 spdlog 的仿真日志库，时间戳跟着仿真时钟走。`backend` 配置项决定时间源：默认 `svdpi`，也可以换成 `systemc`。依赖 `spdlog`、`systemc` 和 `svdpi`。 |
 
 ## 快速上手
 
@@ -27,28 +28,7 @@ $ xrepo add-repo eda git@github.com:kpskp77/xmake-repo.git
 add_repositories("eda git@github.com:kpskp77/xmake-repo.git")
 ```
 
-之后按需引入：
-
-```lua
-add_requires("systemc 3.0.2", "svdpi 1.0.0")
-
-target("my_model")
-    set_kind("binary")
-    set_languages("c++17")
-    add_packages("systemc", "svdpi")
-    add_files("src/*.cpp")
-```
-
-```console
-$ xmake            # 配置 + 编译，依赖自动拉取并缓存
-$ xmake run
-```
-
-版本号也可以不写，交给 xmake 挑最新的；想用动态库就加个 configs：
-
-```lua
-add_requires("systemc 3.0.2", {configs = {shared = true}})
-```
+更多信息参见 [xrepo 官方指南](https://xrepo.xmake.io)
 
 ## 环境要求
 

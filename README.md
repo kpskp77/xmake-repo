@@ -14,6 +14,7 @@ versions across Linux, macOS and Windows.
 | ------- | ---------- | ------- | ----------- |
 | [`systemc`](https://systemc.org/) | 3.0.2, 3.0.1, 3.0.0, 2.3.4, 2.3.3, 2.3.2 | Apache-2.0 | The Accellera SystemC class library for system-level design, modeling and verification. Builds static or shared, automatically sets `SC_CPLUSPLUS` (C++17 for 3.x, C++11 for 2.3.x). |
 | [`svdpi`](https://github.com/kpskp77/svdpi) | 1.1.0, 1.0.0 | MIT | SystemVerilog DPI-C header package, for writing C/C++ side DPI import/export functions used by simulators and Verilator. |
+| [`simlog`](https://github.com/kpskp77/simlog) | 1.0.0 | MIT | Simulation logger built on spdlog, wired to the simulator clock. The `backend` config selects the timestamp source: `svdpi` (default) or `systemc`. Depends on `spdlog`, `systemc` and `svdpi`. |
 
 ## Quick start
 
@@ -29,22 +30,7 @@ or inside your `xmake.lua`:
 add_repositories("eda git@github.com:kpskp77/xmake-repo.git")
 ```
 
-Then require the packages you need:
-
-```lua
-add_requires("systemc 3.0.2", "svdpi 1.0.0")
-
-target("my_model")
-    set_kind("binary")
-    set_languages("c++17")
-    add_packages("systemc", "svdpi")
-    add_files("src/*.cpp")
-```
-
-```console
-$ xmake            # configure + build, packages are fetched and cached automatically
-$ xmake run
-```
+Check [xrepo official guide](https://xrepo.xmake.io) for more details.
 
 ## Requirements
 
