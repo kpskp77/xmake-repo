@@ -16,6 +16,14 @@ package("simlog", function()
 
 	add_versions("1.0.0", "10bc5f470de66ddb1f1ba60e6ee2faf843ce37aefccce73fce905a866685a623")
 
+	on_load(function(package)
+		if package:config("backend") == "systemc" then
+			package:add("defines", "SIMLOG_BACKEND_SYSTEMC")
+		else
+			package:add("defines", "SIMLOG_BACKEND_SVDPI")
+		end
+	end)
+
 	on_install(function(package)
 		configs = { backend = package:config("backend") }
 		import("package.tools.xmake").install(package, configs)
