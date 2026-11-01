@@ -9,18 +9,18 @@ package("simlog", function()
 	)
 
 	add_deps("spdlog", { configs = { header_only = false, shared = true } })
-	add_deps("systemc", { configs = { shared = true } })
-	add_deps("svdpi")
 
 	add_urls("https://github.com/kpskp77/simlog/archive/refs/tags/v$(version).tar.gz")
 
-	add_versions("1.0.0", "10bc5f470de66ddb1f1ba60e6ee2faf843ce37aefccce73fce905a866685a623")
+	add_versions("1.0.0", "ff4e0f2d851979b0883cf0a8d37ccce1caa57f1837b6903479284723e5a76220")
 
 	on_load(function(package)
 		if package:config("backend") == "systemc" then
 			package:add("defines", "SIMLOG_BACKEND_SYSTEMC")
+			package:add("deps", "systemc", { configs = { shared = true } })
 		else
 			package:add("defines", "SIMLOG_BACKEND_SVDPI")
+			package:add("deps", "svdpi")
 		end
 	end)
 
