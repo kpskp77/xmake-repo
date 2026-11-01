@@ -12,7 +12,7 @@ versions across Linux, macOS and Windows.
 
 | Package | Version(s) | License | Description |
 | ------- | ---------- | ------- | ----------- |
-| [`simlog`](https://github.com/kpskp77/simlog) | 1.0.0 | MIT | Simulation logger built on spdlog, wired to the simulator clock. The `backend` config selects the timestamp source: `svdpi` (default) or `systemc`. Depends on `spdlog`, `systemc` and `svdpi`. |
+| [`simlog`](https://github.com/kpskp77/simlog) | 1.1.0, 1.0.0 | MIT | Simulation logger built on spdlog, wired to the simulator clock. The `backend` config selects the timestamp source: `svdpi` (default) or `systemc`. Depends on `spdlog`, `systemc` and `svdpi`. |
 | [`svdpi`](https://github.com/kpskp77/svdpi) | 1.1.0, 1.0.0 | MIT | SystemVerilog DPI-C header package, for writing C/C++ side DPI import/export functions used by simulators and Verilator. |
 | [`systemc`](https://systemc.org/) | 3.0.2, 3.0.1, 3.0.0, 2.3.4, 2.3.3, 2.3.2 | Apache-2.0 | The Accellera SystemC class library for system-level design, modeling and verification. Builds static or shared, automatically sets `SC_CPLUSPLUS` (C++17 for 3.x, C++11 for 2.3.x). |
 

@@ -10,7 +10,7 @@
 
 | 包名 | 版本 | 协议 | 说明 |
 | ---- | ---- | ---- | ---- |
-| [`simlog`](https://github.com/kpskp77/simlog) | 1.0.0 | MIT | 基于 spdlog 的仿真日志库，时间戳跟着仿真时钟走。`backend` 配置项决定时间源：默认 `svdpi`，也可以换成 `systemc`。依赖 `spdlog`、`systemc` 和 `svdpi`。 |
+| [`simlog`](https://github.com/kpskp77/simlog) | 1.1.0, 1.0.0 | MIT | 基于 spdlog 的仿真日志库，时间戳跟着仿真时钟走。`backend` 配置项决定时间源：默认 `svdpi`，也可以换成 `systemc`。依赖 `spdlog`、`systemc` 和 `svdpi`。 |
 | [`svdpi`](https://github.com/kpskp77/svdpi) | 1.1.0, 1.0.0 | MIT | SystemVerilog DPI-C 头文件包，写 DPI import/export 的 C/C++ 侧代码时用，和各类仿真器、Verilator 配合都可以。 |
 | [`systemc`](https://systemc.org/) | 3.0.2、3.0.1、3.0.0、2.3.4、2.3.3、2.3.2 | Apache-2.0 | Accellera 官方的 SystemC 类库，做系统级设计、建模和验证用。静态库、动态库都能编；`SC_CPLUSPLUS` 已经替你加好了（3.x 是 C++17，2.3.x 是 C++11）。 |
 

@@ -12,6 +12,7 @@ package("simlog", function()
 
 	add_urls("https://github.com/kpskp77/simlog/archive/refs/tags/v$(version).tar.gz")
 
+	add_versions("1.1.0", "80e842082b80077575df221f655d319fdb231afbcc8f504d58a7b00abbfcee1f")
 	add_versions("1.0.0", "ff4e0f2d851979b0883cf0a8d37ccce1caa57f1837b6903479284723e5a76220")
 
 	on_load(function(package)
