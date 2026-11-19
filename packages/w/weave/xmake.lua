@@ -9,6 +9,7 @@ package("weave", function()
 
 	add_urls("https://github.com/kpskp77/weave/archive/refs/tags/v$(version).tar.gz")
 
+	add_versions("1.1.0", "101fa72ca4e568e7854d8c9126c85612169d2a7638d744021480e120df63c846")
 	add_versions("1.0.0", "dbe250db3a6ae9d0c468e7287f56e4177350cc5f12c46479ab0c45f72d609e71")
 
 	on_load(function(package)
